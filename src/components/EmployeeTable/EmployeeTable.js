@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import axios from 'axios'
+import 'bootstrap/dist/css/bootstrap.min.css'
+
+
 
 // states property for employee, empty array to start
 class EmployeeTable extends Component {
   state = {
     employees: [],
-    search: ''
   };
 
   async componentDidMount(){
@@ -31,21 +33,42 @@ class EmployeeTable extends Component {
     const usersMap = this.state.employees.map((currentVal, index) => {
 
       const { cell, dob, email, gender, id, location, login, name, nat, phone, picture, registered } = currentVal
+      const { city } = location
       const { title, first, last } = name
       const { thumbnail, medium, large } = picture
+
+      
+      
   
       return (
+							<tr>
+								<td>{`${first}`}</td>
+								<td>{`${last}`}</td>
+								<td>{`${city}`}</td>
+								<td>{`${email}`}</td>
+							</tr>
 
-
-        <div>
-            <h1>{`${title} ${first} ${last}`}</h1>
-        </div>
-      )
+			); 
     })
 
-    return ( 
-      <div> 
+    return (  
+        <div className="container">
+          <div className ="row text-align-left">
+					<table className="table">
+						<thead>
+							<tr>
+								<th>First Name</th>
+								<th>Last Name</th>
+								<th>City</th>
+								<th>Email</th>
+							</tr>
+						</thead>
+
+						<tbody>
         {usersMap}
+        </tbody>
+					</table>
+				</div>
       </div>
     )
   }
