@@ -1,0 +1,20 @@
+.jumbotron {
+    background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72);
+    height: 200px;
+    margin: 0 auto;
+    border-radius: 0 !important;
+  }
+  
+  .jumbotron h1 {
+    color: white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+  }
+  .jumbotron h4 {
+    color: white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  a {
+    color: #008793;
+  }
+ 

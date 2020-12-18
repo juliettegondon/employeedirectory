@@ -1,0 +1,10 @@
+.navbar {
+    padding: 10px 20px;
+    margin: 0 auto;
+    width:auto;
+    background-color: #008793;
+    align-content: flex-start;
+  }
+  .navbar h4 {
+    color: white;
+  }

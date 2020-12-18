@@ -1,14 +1,17 @@
 import React, { Component } from "react";
-import axios from 'axios'
-import 'bootstrap/dist/css/bootstrap.min.css'
+import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './EmployeeTable.css';
 
 
 
 // states property for employee, empty array to start
 class EmployeeTable extends Component {
   state = {
-    employees: [],
+    employees: []
   };
+
+
 
   async componentDidMount(){
     try {
@@ -28,24 +31,33 @@ class EmployeeTable extends Component {
     }
   }
 
+  
+ 
+ 
+
+
   render() {
     //declare variables if you want (dependencies)
     const usersMap = this.state.employees.map((currentVal, index) => {
 
-      const { cell, dob, email, gender, id, location, login, name, nat, phone, picture, registered } = currentVal
+      const {  email, location,  name, picture } = currentVal
       const { city } = location
-      const { title, first, last } = name
-      const { thumbnail, medium, large } = picture
+      const { first, last } = name
+      const { thumbnail } = picture
+
+     
+      
 
       
       
   
       return (
 							<tr>
+                <td><img src={`${thumbnail}`} alt="employee"></img></td>
 								<td>{`${first}`}</td>
 								<td>{`${last}`}</td>
 								<td>{`${city}`}</td>
-								<td>{`${email}`}</td>
+								<td><a href={`${email}`}>{`${email}`}</a></td>
 							</tr>
 
 			); 
@@ -53,10 +65,11 @@ class EmployeeTable extends Component {
 
     return (  
         <div className="container">
-          <div className ="row text-align-left">
+          <div className ="row">
 					<table className="table">
 						<thead>
 							<tr>
+                <th>Image ID</th>
 								<th>First Name</th>
 								<th>Last Name</th>
 								<th>City</th>

@@ -1,14 +1,18 @@
 import React from "react";
+import "./Header.css"
 
 class Header extends React.Component {
     render() {
         return (
-            <div className="Header">
-                <h1>
-                    Employee Directory
-                </h1>
-            </div>
-        )
+
+						<div className="jumbotron d-flex justify-content-center align-items-center">
+							<div class="text-white">
+								<h1>EMPLOYEE DIRECTORY</h1>
+								<h4>Search for an Employee by Last name</h4>
+							</div>
+						</div>
+
+				);
     }
     };
 
