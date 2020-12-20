@@ -12,5 +12,4 @@ export {
     SearchForm,
     Wrapper,
     Nav
-
 }

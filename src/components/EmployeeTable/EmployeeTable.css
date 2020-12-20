@@ -1,6 +1,15 @@
 .table{
     background-color: rgb(241, 247, 249);
 }
+.namebutton{
+    background-color: rgb(241, 247, 249);
+    border-style: hidden;
+}
+.namebutton:hover {
+    color: green;
+    border-style: hidden;
+  }
+  
 
 th{
 font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif

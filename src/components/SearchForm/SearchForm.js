@@ -12,7 +12,6 @@ function SearchForm({ handleSearchChange }) {
 					type="search"
 					placeholder="Search by Last Name"
 					aria-label="Search"
-					onChange={(e) => handleSearchChange(e)}
 				/>
 			</form>
 		</div>
