@@ -1,5 +1,5 @@
 
-  # Title React Homework: Employee Directory
+  # React Homework: Employee Directory
 
   ## Description
   Using React, 10 random users generate from an API when the user loads the page, a table of employees should render. Eventually this will be able to be sorted by name, and there will be a search/filter functionality.
@@ -33,7 +33,7 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-e
+
 ## Available Scripts
 
 In the project directory, you can run:
