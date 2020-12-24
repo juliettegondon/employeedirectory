@@ -6,7 +6,7 @@ class Header extends React.Component {
         return (
 
 						<div className="jumbotron d-flex justify-content-center align-items-center">
-							<div class="text-white">
+							<div className="text-white">
 								<h1>EMPLOYEE DIRECTORY</h1>
 								<h4>Search for an Employee by Last name</h4>
 							</div>

@@ -3,11 +3,13 @@ import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./EmployeeTable.css";
 
+
+
 // states property for employee, empty array to start
 class EmployeeTable extends Component {
 	state = {
-    order:'descend',
-		employees: []
+    employees: [],
+    isAToZ: true
   };
   
 
@@ -27,20 +29,30 @@ class EmployeeTable extends Component {
     
   }
 
+  handleClick =(evt)=> {
+    evt.preventDefault()
+    this.setState({isAToZ:!this.state.isAToZ})
+    console.log(this.state.isAToZ)
+
+  }
+
 
   
 
 	render() {
-		    this.state.employees.sort((a, b) => (a.name.last > b.name.last) ? 1: -1);
-
-		const usersMap = this.state.employees.map((currentVal, index) => {
+    const aToZ = this.state.employees.sort((a, b) => (a.name.first > b.name.first) ? 1: -1)
+    const zToA = this.state.employees.sort((a, b) => (a.name.first > b.name.first) ? -1: 1)
+    console.log(zToA)
+   const sortedEmployees = this.state.isAToZ? aToZ : zToA;
+   
+		const usersMap = sortedEmployees.map((currentVal, index) => {
 			const { email, location, name, picture } = currentVal;
 			const { city } = location;
 			const { first, last } = name;
 			const { thumbnail } = picture;
 
 			return (
-				<tr key="uniqueid1">
+				<tr key={`uniqueid${index}`}>
 					<td>
 						<img src={`${thumbnail}`} alt="employee"></img>
 					</td>
@@ -71,6 +83,9 @@ class EmployeeTable extends Component {
 						<tbody>{usersMap}</tbody>
 					</table>
 				</div>
+
+        <h1> ------------------TEST--------------------</h1>
+        {usersMap}
 			</div>
 		);
 	}
